@@ -1,104 +1,156 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather App</title>
+    <title>Andres Hencker's Porfolio</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/contactStyle.css">
+    <link rel="stylesheet" href="/css/JavascriptProjects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/apiWeather.css">
+    <link rel="stylesheet" href="/css/quiz.css">
+    <link rel="stylesheet" href="/css/toDoList.css">
+    <link rel="stylesheet" href="/css/bio.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css">
+
 </head>
 <body>
+<h1>Andres hencker</h1>
 
-   <div class="card">
-       <div class="search">
-           <input type="text" placeholder="enter city name" spellcheck="false">
-           <button><img src="/images/search.png" alt=""></button>
-       </div>
-       <div class="error">
-            <p>Invalid city name</p>
-       </div>
-       <div class="weather">
-           <img src="/images/rain.png" class="weather-icon">
-           <h1 class="temp">22°c</h1>
-           <h2 class="city">Sydney</h2>
-           <h2 class="description">broken clouds</h2>
-           <div class="details">
-               <div class="col">
-                   <img src="/images/humidity.png">
-                   <div>
-                       <p class="humidity">50%</p>
-                        <p>Humidity</p>
-                   </div>
-               </div>
-               <div class="col">
-                   <img src="/images/wind.png">
-                   <div>
-                       <p class="wind">15 km/h</p>
-                       <p>Wind Speed</p>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
-<script>
-    const apiKey="be3e5fe2554db50f87325b4dd583a3ed";
-    const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-    const searchBox= document.querySelector(".search input");
-    const searchBtn= document.querySelector(".search button");
-    const weatherIcon=document.querySelector(".weather-icon");
+<section id="bio">
+    <img src="/images/porfolio/yop.png">
 
+    <h2>Welcome to My Portfolio</h2>
+    <p>Hello! I'm Andres Hencker, an enthusiastic student delving into the world of web development. My journey in tech
+        began recently, and I've been passionately learning HTML, CSS, and JavaScript. Although I am at the early stages
+        of my web development path, I am actively building my first project – this very portfolio website – which is a
+        testament to my dedication and eagerness to learn. When not absorbed in coding, I enjoy exploring the latest in
+        technology trends and dabbling in graphic design, which complements my interest in web development. My
+        aspiration is to continuously grow my skills and eventually create digital solutions that are not only
+        functional but also aesthetically pleasing. Join me on this exciting journey as I explore the vast landscape of
+        technology and web development.</p>
 
-    async function checkWeather(city){
-        const response = await fetch(apiUrl+city+`&appid=${apiKey}`);
-        if(response.status==404){
-            document.querySelector(".error").style.display= "block";
-            document.querySelector(".weather").style.display= "none";
-        }
-        else{
-            var data= await response.json();
-            console.log(data);
-            document.querySelector(".city").innerHTML=data.name+" "+ data.sys.country;
-            document.querySelector(".temp").innerHTML=Math.round(data.main.temp) +"°c";
-            document.querySelector(".humidity").innerHTML=data.main.humidity+"%";
-            document.querySelector(".wind").innerHTML=data.wind.speed+ " Km/h";
-            document.querySelector(".description").innerHTML=data.weather[0].description;
+</section>
 
-            if (data.weather[0].main=="Clouds"){
-                weatherIcon.src="/images/clouds.png"
-            }
-            else if (data.weather[0].main=="Clear"){
-                weatherIcon.src="/images/clear.png"
-            }
-            else if (data.weather[0].main=="Drizzle"){
-                weatherIcon.src="/images/drizzle.png"
-            }
-            else if (data.weather[0].main=="Humidity"){
-                weatherIcon.src="/images/humidity.png"
-            }
-            else if (data.weather[0].main=="Mist"){
-                weatherIcon.src="/images/mist.png"
-            }
-            else if (data.weather[0].main=="Rain"){
-                weatherIcon.src="/images/rain.png"
-            }
-            else if (data.weather[0].main=="Snow"){
-                weatherIcon.src="/images/snow.png"
-            }
-            else if (data.weather[0].main=="Wind"){
-                weatherIcon.src="/images/wind.png"
-            }
+<section id="home">
+    <!-- Home content here -->
+</section>
 
-            document.querySelector(".weather").style.display="block";
-            document.querySelector(".error").style.display= "none";
-        }
+<section id="about">
+    <!-- About Me content here -->
+</section>
 
-    }
+<section id="projects">
+    <h2>My Projects</h2>
+    <section class="JavascriptProject">
+        <div class="slide-container swiper">
+            <div class="slide-content">
+                <div class="card-wrapper swiper-wrapper">
+                    <div class="card swiper-slide">
+                        <section class="apiWeather">
+                            <div class="cardApiWeather">
+                                <h2>Api Weather</h2>
+                                <div class="search">
+                                    <input type="text" placeholder="enter city name" spellcheck="false">
+                                    <button><img src="/images/apiWeather/search.png" alt=""></button>
+                                </div>
+                                <div class="error">
+                                    <p>Invalid city name</p>
+                                </div>
+                                <div class="weather">
+                                    <img src="/images/apiWeather/rain.png" class="weather-icon">
+                                    <h1 class="temp">22°c</h1>
+                                    <h2 class="city">Sydney</h2>
+                                    <h2 class="description">broken clouds</h2>
+                                    <div class="details">
+                                        <div class="col">
+                                            <img src="/images/apiWeather/humidity.png">
+                                            <div>
+                                                <p class="humidity">50%</p>
+                                                <p>Humidity</p>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <img src="/images/apiWeather/wind.png">
+                                            <div>
+                                                <p class="wind">15 km/h</p>
+                                                <p>Wind Speed</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-    searchBtn.addEventListener("click",()=>{
-        checkWeather(searchBox.value)
-    })
-</script>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+</section>
+<section class="Quiz">
+    <section class="cardQuiz">
+        <h2>Quiz HTML,CSS and JAVASCRIPT</h2>
+        <div class="quiz">
+            <h2 id="question">question goes here</h2>
+            <div id="answer-buttons">
+                <button class="btn">answer 1</button>
+                <button class="btn">answer 2</button>
+                <button class="btn">answer 3</button>
+                <button class="btn">answer 4</button>
+            </div>
+            <button id="next-btn">Next</button>
+        </div>
+    </section>
+</section>
+<section class="toDoList">
+    <section class="cardToDo">
+        <h2>To-Do-List</h2>
+        <div class="container">
+            <div class="todo-app">
+                <h2>Tasks<img src="/images/toDOList/icon.png"></h2>
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="add your text">
+                    <button onclick="addTask()">Add</button>
+                </div>
+                <ul id="list-container">
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you have any questions or just want to say hello, feel free to get in touch with me!</p>
+    <form action="submit_form.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+    <p>Email: andreshencker@gmail.com</p>
+    <!-- Add your social media links here -->
+    <div class="social-media-links">
+        <p>Connect with me on:</p>
+        <a href="https://www.linkedin.com/in/andres-hencker-6564a6147/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/andreshencker" target="_blank"><i class="fab fa-github"></i></a>
+        <!-- Add more icons as needed -->
+    </div>
+</section>
 
 </body>
+<script src="/javascript/cardSlide.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script>
+<script src="C:\Users\HENCKER\WebstormProjects\porfolio\javascript\javascript\apiWeather.js"></script>
+<script src="C:\Users\HENCKER\WebstormProjects\porfolio\javascript\javascript\apiWeather.js"></script>
+<script src="C:\Users\HENCKER\WebstormProjects\porfolio\javascript\javascript\quiz.js"></script>
 </html>

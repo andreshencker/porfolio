@@ -1,0 +1,45 @@
+#contact {
+    /* Styles for the contact section */
+    background-color: #f4f4f4;
+    padding: 2rem;
+    text-align: center;
+}
+
+#contact form {
+    /* Styles for the form */
+    margin-top: 1rem;
+}
+
+#contact label,
+#contact input,
+#contact textarea,
+#contact button {
+    /* Shared styles for form elements */
+    display: block;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+#contact button {
+    /* Style for the submit button */
+    background-color: #333;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.social-media-links {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.social-media-links a {
+    margin: 0 10px;
+    font-size: 24px; /* Adjust the size of the icons */
+    color: #333; /* Icon color */
+}
+
+.social-media-links a:hover {
+    color: #007bff; /* Color change on hover */
+}

@@ -1,0 +1,11 @@
+#bio {
+    padding: 1rem;
+    margin: 1rem;
+    background: #fff;
+    text-align: center;
+}
+
+#bio img {
+    max-width: 150px;
+    border-radius: 50%;
+}
